@@ -190,8 +190,8 @@ window.addEventListener('load', () => {
         confetti.style.width = `${size}px`;
         confetti.style.height = `${size}px`;
         
-        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        confetti.style.animationDelay = Math.random() * 5 + "s";
+        confetti.style.animationDuration = (Math.random() * 1 + 1) + "s";
+        confetti.style.animationDelay = Math.random() * 2 + "s";
         
         container.appendChild(confetti);
     }
