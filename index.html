@@ -1,47 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Happy Birthday Dear Ankita!</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
-            color: #fff;
-            text-align: center;
-        }
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 50px;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        button {
-            font-weight: 600;
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6">
-    
-    <!-- Birthday Music -->
-    <audio id="birthdaySong" autoplay loop>
-        <source src="assets/birthdaysong.mp3" type="audio/mpeg">
-    </audio>
-    <!-- Birthday Cards Grid -->
-      🎉💛✨ Happy Birthday,Dear Ankita!<br>💖🎁🥳</p
+  <body class="bg-pink-600 min-h-screen p-8">
+<div class="container mx-auto">
+    <h1
+        class="text-6xl font-extra bold text-center bg-clip-text bg-gradient-to-r from-red-400 via-orange-500 to-teal-400 mb-12"
+        style="font-family: Pacifico, cursive"
+    >
+         🎉💛✨ Happy Birthday,Dear Ankita!<br>💖🎁🥳</p
     </h1>
     <div class="grid md:grid-cols-3 gap-8">
         <!-- Cake Wishes Card -->
@@ -201,17 +180,4 @@
 <script src="script.js"></script>
 </body>
 </html>
-    <!-- JavaScript -->
-    <script>
-        function toggleMusic() {
-            var audio = document.getElementById("birthdaySong");
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
-    </script>
-
-</body>
-</html>
+ how to add birthday song in it
