@@ -118,6 +118,20 @@ function createConfettiFromButton(x, y) {
     }
 }
 
+// Function to autoplay music
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+
+    music.play().catch(err => {
+        console.log("Autoplay blocked. Waiting for user interaction.");
+    });
+
+    // Play on user interaction if blocked
+    document.body.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+}
+
 window.addEventListener('load', () => {
     setTimeout(() => {
         const container = document.getElementById("confetti-container");
@@ -144,24 +158,9 @@ window.addEventListener('load', () => {
             container.appendChild(confetti);
         }
     }, 500);
-    document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById("bgMusic");
 
-    function playMusic() {
-        music.play().then(() => {
-            console.log("Music is playing.");
-        }).catch(err => {
-            console.log("Autoplay blocked, waiting for user interaction.");
-        });
-    }
-
+    
     // Try autoplay
     playMusic();
-
-    // Add event listener for user interaction
-    document.body.addEventListener("click", () => {
-        playMusic();
-    }, { once: true });
-});
 
 });
