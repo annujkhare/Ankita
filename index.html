@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 
-<body class="bg-pink-600 min-h-screen p-8">
+    <audio id="birthdaysong">
+        <source src="assets/birthdaysong.mp3" type="audio/mpeg">
+    </audio>
+
+    document.getElementById("birthdaysong").play();
+
+    <body class="bg-pink-600 min-h-screen p-8">
 <div class="container mx-auto">
     <h1
         class="text-6xl font-extra bold text-center bg-clip-text bg-gradient-to-r from-red-400 via-orange-500 to-teal-400 mb-12"
