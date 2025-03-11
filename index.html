@@ -1,183 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Happy Birthday Dear Ankita!</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-        rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Ankita! 🎉</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 50px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            font-weight: 600;
+        }
+    </style>
 </head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
 
-<body class="bg-pink-600 min-h-screen p-8">
-<div class="container mx-auto">
-    <h1
-        class="text-6xl font-extra bold text-center bg-clip-text bg-gradient-to-r from-red-400 via-orange-500 to-teal-400 mb-12"
-        style="font-family: Pacifico, cursive"
-    >
-         🎉💛✨ Happy Birthday,Dear Ankita!<br>💖🎁🥳
-    </h1>
-    <div class="grid md:grid-cols-3 gap-8">
-        <!-- Cake Wishes Card -->
-        <div
-            class="birthday-card bg-white rounded-xl shadow-lg p-6 text-center"
-            data-card-type="cake"
-        >
-            <h2 class="text-3xl font-bold text-pink-600 mb-4">
-                Wish you a happy birthday dear 🎂
-            </h2>
-            <img
-                src="assets/cake1.jpg"
-                alt="Birthday Cake"
-                class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
-            />
-            <p class="text-gray-700 mb-4">
-                Happy Birthday, Ankita! Your presence lights up every
-                moment—here's to a day as special as you!
-            </p>
-            <button
-                onclick="changeCardContent(this)"
-                class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600"
-            >
-                New Wish
-            </button>
+    <!-- Header -->
+    <h1 class="mb-6 text-yellow-300">🎉 Happy Birthday, Ankita! 🎂</h1>
+    
+    <!-- Birthday Music -->
+    <audio id="birthdaySong" loop>
+        <source src="assets/birthdaysong.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Play/Pause Button -->
+    <button onclick="toggleMusic()" class="bg-yellow-500 text-white px-6 py-3 rounded-full hover:bg-yellow-600 mb-6">
+        🎶 Play Birthday Song
+    </button>
+    
+    <!-- Birthday Cards Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
+        <!-- Cake Card -->
+        <div class="card">
+            <h2 class="text-2xl font-bold">🎂 Wishing You a Sweet Day!</h2>
+            <img src="assets/cake1.jpg" alt="Cake" class="w-full h-48 object-cover rounded-lg mt-3">
+            <p class="mt-2">May your birthday be filled with love, laughter, and of course, lots of cake! 🍰</p>
         </div>
 
-        <!-- Balloon Blast Card -->
-        <div
-            class="birthday-card bg-pink-100 rounded-xl shadow-lg p-6 text-center"
-            data-card-type="balloon"
-        >
-            <h2 class="text-3xl font-bold text-pink-600 mb-4">
-                Have a blast celebrating your birthday 🎉
-            </h2>
-            <img
-                src="assets/ballon1.jpg"
-                alt="Birthday Balloons"
-                class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
-            />
-            <p class="text-gray-700 mb-4">
-                Happy Birthday to best sister and friend,who fills life with meaning and memories.
-                Your presence is a gift in itself!
-            </p>
-            <button
-                onclick="changeCardContent(this)"
-                class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600"
-            >
-                New Wish
-            </button>
+        <!-- Balloons Card -->
+        <div class="card">
+            <h2 class="text-2xl font-bold">🎈 Let’s Celebrate Big!</h2>
+            <img src="assets/balloon1.jpg" alt="Balloons" class="w-full h-48 object-cover rounded-lg mt-3">
+            <p class="mt-2">A special day for a special person. You deserve all the happiness! 🥳</p>
         </div>
 
-        <!-- Party Time Card -->
-        <div
-            class="birthday-card bg-blue-100 rounded-xl shadow-lg p-6 text-center"
-            data-card-type="party"
-        >
-            <h2 class="text-3xl font-bold text-blue-600 mb-4">
-                Happy 19th Birthday💗
-            </h2>
-            <img
-                src="assets/party1.jpg"
-                alt="Birthday Party"
-                class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
-            />
-            <p class="text-gray-700 mb-4">
-                There's no one like you, and today is proof that the world
-                celebrates its most special souls. Happy Birthday!
-            </p>
-            <button
-                onclick="changeCardContent(this)"
-                class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
-            >
-                New Wish
-            </button>
+        <!-- Party Card -->
+        <div class="card">
+            <h2 class="text-2xl font-bold">🎊 Party Time!</h2>
+            <img src="assets/party1.jpg" alt="Party" class="w-full h-48 object-cover rounded-lg mt-3">
+            <p class="mt-2">Let’s make this day unforgettable. Your happiness is our mission! 🎶</p>
         </div>
 
         <!-- Gifts Card -->
-        <div
-            class="birthday-card bg-green-100 rounded-xl shadow-lg p-6 text-center"
-            data-card-type="gifts"
-        >
-            <h2 class="text-3xl font-bold text-green-600 mb-4">
-                You are the most beautiful girl in the world 😍
-            </h2>
-            <img
-                src="assets/gifts1.jpg"
-                alt="Birthday Gifts"
-                class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
-            />
-            <p class="text-gray-700 mb-4">
-                You make every day brighter and every memory sweeter. Wishing you
-                the happiest birthday!
-            </p>
-            <button
-                onclick="changeCardContent(this)"
-                class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
-            >
-                New Wish
-            </button>
-        </div>
-
-        <!-- Memories Card -->
-        <div
-            class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center"
-            data-card-type="memories"
-        >
-            <h2 class="text-3xl font-bold text-red-600 mb-4">
-                Cherish your memories 😎
-            </h2>
-            <img
-                src="assets/moment1.jpg"
-                alt="Birthday Memories"
-                class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
-            />
-            <p class="text-gray-700 mb-4">
-                Sister like you are rare gem-priceless and precious. wishing you a fantastic birthday.
-            </p>
-            <button
-                onclick="changeCardContent(this)"
-                class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
-            >
-                New Wish
-            </button>
+        <div class="card">
+            <h2 class="text-2xl font-bold">🎁 A Gift for You!</h2>
+            <img src="assets/gifts1.jpg" alt="Gifts" class="w-full h-48 object-cover rounded-lg mt-3">
+            <p class="mt-2">May your day be as wonderful as you are. Sending you all my love! 💝</p>
         </div>
 
         <!-- Friendship Card -->
-        <div
-            class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center"
-            data-card-type="friendship"
-        >
-            <h2 class="text-3xl font-bold text-red-600 mb-4">
-                Hope we stay friends forever 👫
-            </h2>
-            <img
-                src="assets/friendship1.jpg"
-                alt="Birthday Friendship"
-                class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
-            />
-            <p class="text-gray-700 mb-4">Celebrating our amazing friendship!</p>
-            <button
-                onclick="changeCardContent(this)"
-                class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
-            >
-                New Wish
-            </button>
+        <div class="card">
+            <h2 class="text-2xl font-bold">👫 Friends Forever!</h2>
+            <img src="assets/friendship1.jpg" alt="Friends" class="w-full h-48 object-cover rounded-lg mt-3">
+            <p class="mt-2">So lucky to have you in my life. Here’s to another year of amazing friendship! 💖</p>
         </div>
     </div>
-</div>
 
-<!-- Moved confetti container to the end -->
-<div
-    id="confetti-container"
-    class="fixed top-0 left-0 w-full h-full pointer-events-none"
-></div>
+    <!-- JavaScript -->
+    <script>
+        function toggleMusic() {
+            var audio = document.getElementById("birthdaySong");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
 
-<script src="script.js"></script>
 </body>
 </html>
