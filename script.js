@@ -144,4 +144,24 @@ window.addEventListener('load', () => {
             container.appendChild(confetti);
         }
     }, 500);
+    document.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("bgMusic");
+
+    function playMusic() {
+        music.play().then(() => {
+            console.log("Music is playing.");
+        }).catch(err => {
+            console.log("Autoplay blocked, waiting for user interaction.");
+        });
+    }
+
+    // Try autoplay
+    playMusic();
+
+    // Add event listener for user interaction
+    document.body.addEventListener("click", () => {
+        playMusic();
+    }, { once: true });
+});
+
 });
