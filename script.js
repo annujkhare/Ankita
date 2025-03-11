@@ -144,17 +144,4 @@ window.addEventListener('load', () => {
             container.appendChild(confetti);
         }
     }, 500);
-
-document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById("bgMusic");
-
-    // Attempt to autoplay when the page loads
-    music.play().catch(() => {
-        console.log("Autoplay blocked. Waiting for user interaction...");
-
-        // Enable autoplay after user interaction (click anywhere)
-        document.body.addEventListener("click", () => {
-            music.play();
-        }, { once: true });
-    });
 });
