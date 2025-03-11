@@ -8,13 +8,17 @@
     <!-- Dancing Script Font -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet"/>
 
-    <!-- Tailwind CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"/>
-    
     <link rel="stylesheet" href="styles.css"/>
+
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
 </head>
-<body class="bg-pink-600 min-h-screen p-8" style="font-family: 'Dancing Script', cursive;">
-    
+<body class="bg-pink-600 min-h-screen p-8">
+
     <!-- Background Music -->
     <audio id="bgMusic" autoplay loop>
         <source src="assets/birthdaysong.mp3" type="audio/mpeg">
@@ -22,58 +26,93 @@
 
     <div class="container mx-auto">
         <h1
-            class="text-6xl font-bold text-center bg-clip-text bg-gradient-to-r from-red-400 via-orange-500 to-teal-400 mb-12"
+            class="text-6xl font-extra bold text-center bg-clip-text bg-gradient-to-r from-red-400 via-orange-500 to-teal-400 mb-12"
         >
-            🎉💛✨ Happy Birthday, Dear Ankita! 💖🎁🥳
+            🎉💛✨Happy Birthday, Dear Ankita!💖🎁🥳
         </h1>
 
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Cake Wishes Card -->
-            <div class="birthday-card bg-white rounded-xl shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-bold text-pink-600 mb-4">Wish you a happy birthday dear 🎂</h2>
+            <div class="birthday-card bg-white rounded-xl shadow-lg p-6 text-center" data-card-type="cake">
+                <h2 class="text-3xl font-bold text-pink-600 mb-4">
+                    Wish you a happy birthday dear 🎂
+                </h2>
                 <img src="assets/cake1.jpg" alt="Birthday Cake" class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"/>
-                <p class="text-gray-700 mb-4">Happy Birthday, Ankita! Your presence lights up every moment—here's to a day as special as you!</p>
-                <button onclick="changeCardContent(this)" class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">New Wish</button>
+                <p class="text-gray-700 mb-4">
+                    Happy Birthday, Ankita! Your presence lights up every moment—here's to a day as special as you!
+                </p>
+                <button onclick="changeCardContent(this)" class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
+                    New Wish
+                </button>
             </div>
 
             <!-- Balloon Blast Card -->
-            <div class="birthday-card bg-pink-100 rounded-xl shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-bold text-pink-600 mb-4">Have a blast celebrating your birthday 🎉</h2>
+            <div class="birthday-card bg-pink-100 rounded-xl shadow-lg p-6 text-center" data-card-type="balloon">
+                <h2 class="text-3xl font-bold text-pink-600 mb-4">
+                    Have a blast celebrating your birthday 🎉
+                </h2>
                 <img src="assets/ballon1.jpg" alt="Birthday Balloons" class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"/>
-                <p class="text-gray-700 mb-4">Happy Birthday to the best sister and friend, who fills life with meaning and memories. Your presence is a gift in itself!</p>
-                <button onclick="changeCardContent(this)" class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">New Wish</button>
+                <p class="text-gray-700 mb-4">
+                    Happy Birthday to best sister and friend, who fills life with meaning and memories.
+                    Your presence is a gift in itself!
+                </p>
+                <button onclick="changeCardContent(this)" class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
+                    New Wish
+                </button>
             </div>
 
             <!-- Party Time Card -->
-            <div class="birthday-card bg-blue-100 rounded-xl shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-bold text-blue-600 mb-4">Happy 19th Birthday💗</h2>
+            <div class="birthday-card bg-blue-100 rounded-xl shadow-lg p-6 text-center" data-card-type="party">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">
+                    Happy 19th Birthday💗
+                </h2>
                 <img src="assets/party1.jpg" alt="Birthday Party" class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"/>
-                <p class="text-gray-700 mb-4">There's no one like you, and today is proof that the world celebrates its most special souls. Happy Birthday!</p>
-                <button onclick="changeCardContent(this)" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">New Wish</button>
+                <p class="text-gray-700 mb-4">
+                    There's no one like you, and today is proof that the world celebrates its most special souls. Happy Birthday!
+                </p>
+                <button onclick="changeCardContent(this)" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">
+                    New Wish
+                </button>
             </div>
 
             <!-- Gifts Card -->
-            <div class="birthday-card bg-green-100 rounded-xl shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-bold text-green-600 mb-4">You are the most beautiful girl in the world 😍</h2>
+            <div class="birthday-card bg-green-100 rounded-xl shadow-lg p-6 text-center" data-card-type="gifts">
+                <h2 class="text-3xl font-bold text-green-600 mb-4">
+                    You are the most beautiful girl in the world 😍
+                </h2>
                 <img src="assets/gifts1.jpg" alt="Birthday Gifts" class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"/>
-                <p class="text-gray-700 mb-4">You make every day brighter and every memory sweeter. Wishing you the happiest birthday!</p>
-                <button onclick="changeCardContent(this)" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">New Wish</button>
+                <p class="text-gray-700 mb-4">
+                    You make every day brighter and every memory sweeter. Wishing you the happiest birthday!
+                </p>
+                <button onclick="changeCardContent(this)" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">
+                    New Wish
+                </button>
             </div>
 
             <!-- Memories Card -->
-            <div class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-bold text-red-600 mb-4">Cherish your memories 😎</h2>
+            <div class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center" data-card-type="memories">
+                <h2 class="text-3xl font-bold text-red-600 mb-4">
+                    Cherish your memories 😎
+                </h2>
                 <img src="assets/moment1.jpg" alt="Birthday Memories" class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"/>
-                <p class="text-gray-700 mb-4">Sisters like you are rare gems—priceless and precious. Wishing you a fantastic birthday.</p>
-                <button onclick="changeCardContent(this)" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">New Wish</button>
+                <p class="text-gray-700 mb-4">
+                    Sisters like you are rare gems—priceless and precious. Wishing you a fantastic birthday.
+                </p>
+                <button onclick="changeCardContent(this)" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+                    New Wish
+                </button>
             </div>
 
             <!-- Friendship Card -->
-            <div class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center">
-                <h2 class="text-3xl font-bold text-red-600 mb-4">Hope we stay friends forever 👫</h2>
+            <div class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center" data-card-type="friendship">
+                <h2 class="text-3xl font-bold text-red-600 mb-4">
+                    Hope we stay friends forever 👫
+                </h2>
                 <img src="assets/friendship1.jpg" alt="Birthday Friendship" class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"/>
                 <p class="text-gray-700 mb-4">Celebrating our amazing friendship!</p>
-                <button onclick="changeCardContent(this)" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">New Wish</button>
+                <button onclick="changeCardContent(this)" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+                    New Wish
+                </button>
             </div>
         </div>
     </div>
@@ -81,20 +120,6 @@
     <!-- Confetti Container -->
     <div id="confetti-container" class="fixed top-0 left-0 w-full h-full pointer-events-none"></div>
 
-    <script>
-        // Change Card Content Function
-        function changeCardContent(button) {
-            const wishes = [
-                "Wishing you all the happiness in the world! 🎉",
-                "May your dreams come true this year! ✨",
-                "Sending you lots of love and joy! 💖",
-                "You're amazing—never forget that! 💕",
-                "Cheers to another fantastic year ahead! 🎂",
-            ];
-            const parentCard = button.closest('.birthday-card');
-            const messageElement = parentCard.querySelector('p');
-            messageElement.textContent = wishes[Math.floor(Math.random() * wishes.length)];
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
