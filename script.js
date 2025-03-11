@@ -19,7 +19,7 @@ const imageCollections = {
     ],
     gifts: [
         "assets/gifts1.jpg",
-        "assets/gift2.jpg",
+        "assets/gifts2.jpg",
         "assets/ballon2.jpg",
         "assets/ballon1.jpg",
     ],
